@@ -7,7 +7,10 @@ async function getData(url) {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    return await response.json();
+    const res = await response.json();
+    console.log(res);
+    
+    return res
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -36,7 +39,7 @@ function createCard(item) {
   cardImg.alt = item.title;
 
   cardImg.onerror = function () {
-    this.src = 'https://via.placeholder.com/600/92c952';
+    this.src = 'https://media.istockphoto.com/id/1344252867/photo/portrait-of-modern-female-librarian-of-asian-ethnicity.webp?a=1&b=1&s=612x612&w=0&k=20&c=FojIOpadhEN080HSKCE50cLIfAaPPQrOGOJNJV122so=';
   };
 
   // Create card body
